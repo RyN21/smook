@@ -5,13 +5,13 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: ruby 2.5.3p105
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation: postgresql
 
 * Database initialization
 
@@ -22,3 +22,21 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Smook
+
+* Smook is a social media platform for book lovers around the globe.
+* The basis of this application is for users to store and share books that they love or are interested in.
+* Users can follow others to see what books they are interested in.
+* There will be many features included as the app gets developed
+
+### Features
+
+* Users will have to create an account / profile and log in
+* Users can follow other User
+* Users will have the following lists:
+  - favorites
+  - interested
+  - read
+  - followers
+  - following
