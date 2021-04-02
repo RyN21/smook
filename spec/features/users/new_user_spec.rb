@@ -68,4 +68,20 @@ RSpec.describe 'User Sign Up' do
     expect(current_path).to eq('/sign_up')
     expect(page).to  have_content("User could not be created: [\"Username has already been taken\"]")
   end
+
+  it "user sign up fails, Password does not match" do
+    visit '/sign_up'
+
+    fill_in :email, with: ""
+    fill_in :username, with: ""
+    fill_in :first_name, with: "Ryan"
+    fill_in :last_name, with: "Laleh"
+    fill_in :password, with: "1234Abc!"
+    fill_in :confirm_password, with: "1234Abc!"
+
+    click_button 'Submit'
+
+    expect(current_path).to eq('/sign_up')
+    expect(page).to have_content("User could not be created: [\"Passwords do not match\"]")
+  end
 end
