@@ -34,4 +34,21 @@ RSpec.describe 'User Sign Up' do
     expect(current_path).to eq('/sign_up')
     expect(page).to have_content("User could not be created: [\"Email can't be blank\", \"Username can't be blank\"]")
   end
+
+  it "user sign up fails, Email already taken" do
+    user = User.create!(email: "test@test.com", username: "user1", password: "123456")
+    visit '/sign_up'
+
+    fill_in :email, with: "test@test.com"
+    fill_in :username, with: "ryan21"
+    fill_in :first_name, with: "Ryan"
+    fill_in :last_name, with: "Laleh"
+    fill_in :password, with: "1234Abc!"
+    fill_in :confirm_password, with: "1234Abc!"
+
+    click_button 'Submit'
+
+    expect(current_path).to eq('/sign_up')
+    expect(page).to  have_content("User could not be created: [\"Email has already been taken\"]")
+  end
 end
