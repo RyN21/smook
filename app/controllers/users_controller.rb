@@ -7,6 +7,9 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/profile'
       flash[:success] = "#{user.name}, You are now signed up!"
+    else
+      flash[:error] = "User could not be created: #{user.errors.full_messages.each {|msg| msg}}"
+      redirect_to '/sign_up'
     end
   end
 
