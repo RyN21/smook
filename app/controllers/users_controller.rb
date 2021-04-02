@@ -3,7 +3,10 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    redirect_to '/profile'
+    if user.save
+      session[:user_id] = user.id
+      redirect_to '/profile'
+    end
   end
 
   private
