@@ -4,4 +4,12 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true, on: :create
 
   has_secure_password
+
+  def name
+    if !last_name.nil?
+      first_name.concat(" #{last_name}")
+    else
+      first_name
+    end
+  end
 end
