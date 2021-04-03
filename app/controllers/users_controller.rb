@@ -8,13 +8,13 @@ class UsersController < ApplicationController
       redirect_to '/profile'
       flash[:success] = "#{user.name}, You are now signed up!"
     else
-      flash[:error] = "User could not be created: #{user.errors.full_messages.each {|msg| msg}}"
+      flash[:error] = "User could not be created: #{user.errors.full_messages.uniq.each {|msg| msg}}"
       redirect_to '/sign_up'
     end
   end
 
   private
   def user_params
-    params.permit(:email, :username, :first_name, :last_name, :password)
+    params.permit(:email, :username, :first_name, :last_name, :password, :password_confirmation)
   end
 end
