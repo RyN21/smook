@@ -68,36 +68,36 @@ RSpec.describe 'User Sign Up' do
   #   expect(current_path).to eq('/sign_up')
   #   expect(page).to  have_content("User could not be created: [\"Username has already been taken\"]")
   # end
+  #
+  # it "user sign up fails, Password does not match" do
+  #   visit '/sign_up'
+  #
+  #   fill_in :email, with: "test@test.com"
+  #   fill_in :username, with: "user1"
+  #   fill_in :first_name, with: "Ryan"
+  #   fill_in :last_name, with: "Laleh"
+  #   fill_in :password, with: "1234Abc!"
+  #   fill_in :password_confirmation, with: "123Abc!"
+  #
+  #   click_button 'Submit'
+  #
+  #   expect(current_path).to eq('/sign_up')
+  #   expect(page).to have_content("User could not be created: [\"Password confirmation doesn't match Password\"]")
+  # end
 
-  it "user sign up fails, Password does not match" do
+  it "user sign up fails, Password validation" do
     visit '/sign_up'
 
     fill_in :email, with: "test@test.com"
     fill_in :username, with: "user1"
     fill_in :first_name, with: "Ryan"
     fill_in :last_name, with: "Laleh"
-    fill_in :password, with: "1234Abc!"
-    fill_in :password_confirmation, with: "123Abc!"
+    fill_in :password, with: "1234abc!"
+    fill_in :password_confirmation, with: "1234abc!"
 
     click_button 'Submit'
 
     expect(current_path).to eq('/sign_up')
-    expect(page).to have_content("User could not be created: [\"Password confirmation doesn't match Password\"]")
+    expect(page).to have_content("User could not be created: [\"Password must consist of at least 8 characters, and.. \"]")
   end
-
-  # it "user sign up fails, Password requirements" do
-  #   visit '/sign_up'
-  #
-  #   fill_in :email, with: ""
-  #   fill_in :username, with: ""
-  #   fill_in :first_name, with: "Ryan"
-  #   fill_in :last_name, with: "Laleh"
-  #   fill_in :password, with: "1234Abc!"
-  #   fill_in :password_confirmation, with: "1234Abc!"
-  #
-  #   click_button 'Submit'
-  #
-  #   expect(current_path).to eq('/sign_up')
-  #   expect(page).to have_content("User could not be created: [\"Password must consist of at least 8 characters, and.. \"]")
-  # end
 end
