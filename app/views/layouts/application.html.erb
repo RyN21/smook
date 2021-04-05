@@ -10,13 +10,33 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <div class= "<%=name%>-flash">
-        <p><%= msg %></p>
+    <!--Header-->
+    <header>
+      <nav class="navbar bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="<%= root_path %>">
+            <strong class="name">Home</strong>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!--Main content-->
+    <main class="container">
+      <%= yield %>
+    </main>
+    <!--Footer-->
+    <footer class="p-4 bg-light">
+      <div class="container text-muted">
+        <p> 2021 @ Smook </p>
+        <p class="float-right"> <a href="#">Back to top</a> </p>
       </div>
-    <% end %>
-    <%= yield %>
+    </footer>
   </body>
+  <% flash.each do |name, msg| %>
+    <div class= "<%=name%>-flash">
+      <p><%= msg %></p>
+    </div>
+  <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 </html>
