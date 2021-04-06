@@ -28,6 +28,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'table_print', '~> 1.5', '>= 1.5.7'
   gem 'devise'
+  gem 'devise-security'
 end
 
 group :development do
