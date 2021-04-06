@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   root 'home#index'
   #users
   get '/sign_up', to: 'users#new'
-  post '/users', to: 'users#create'
+  get '/users', to: 'devise#new'
+  # post '/users', to: 'users#create'
 
   get '/profile', to: 'sessions#show'
 end
