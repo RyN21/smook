@@ -42,3 +42,9 @@ Things you may want to cover:
   - read
   - followers
   - following
+
+### Teck
+
+* Ruby 2.5.3p105
+* Rails 6.0.3.6
+* Postgres (PostgreSQL) 13.0
