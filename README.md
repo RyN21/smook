@@ -43,7 +43,7 @@ Things you may want to cover:
   - followers
   - following
 
-### Teck
+### Tech Stack
 
 * Ruby 2.5.3p105
 * Rails 6.0.3.6
