@@ -10,4 +10,10 @@ RSpec.describe 'Home page' do
     visit '/'
     expect(page).to have_content('Home')
   end
+
+  it "has a home button that directs to home page" do
+    visit '/'
+    click_link 'Home'
+    expect(current_path).to eq('/')
+  end
 end
