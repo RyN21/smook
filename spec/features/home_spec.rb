@@ -16,4 +16,10 @@ RSpec.describe 'Home page' do
     click_link 'Home'
     expect(current_path).to eq('/')
   end
+
+  it "has a log in button if no user is logged in" do
+    visit '/'
+    click_link 'Log In'
+    expect(current_path).to eq('/log_in')
+  end
 end
