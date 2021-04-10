@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   root 'home#index'
+
+  get '/log_in', to: 'sessions#new'
   #users
-  get '/sign_up', to: 'users#new'
-  get '/users', to: 'devise#new'
+  namespace :users do
+    get '/sign_up', to: 'registrations#new'
+  end
+  # get '/users', to: 'users#new'
   # post '/users', to: 'users#create'
 
   get '/profile', to: 'sessions#show'
