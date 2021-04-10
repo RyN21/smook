@@ -17,8 +17,13 @@
           <a class="navbar-brand" href="<%= root_path %>">
             <strong class="name">Home</strong>
           </a>
+          <a class="navbar-brand" href="<%= '/log_in' %>">
+            <strong class="name">Log In</strong>
+          </a>
         </div>
       </nav>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </header>
     <!--Main content-->
     <main class="container">
@@ -31,8 +36,6 @@
         <p class="float-right"> <a href="#">Back to top</a> </p>
       </div>
     </footer>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
   <% flash.each do |name, msg| %>
     <div class= "<%=name%>-flash">
