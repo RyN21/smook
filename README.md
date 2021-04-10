@@ -32,6 +32,8 @@ Things you may want to cover:
 
 ### Features
 
+* Currently working to add the gem Devise to validate emails and passwords
+
 * Users will have to create an account / profile and log in
 * Users can follow other User
 * Users will have the following lists:
@@ -40,3 +42,9 @@ Things you may want to cover:
   - read
   - followers
   - following
+
+### Tech Stack
+
+* Ruby 2.5.3p105
+* Rails 6.0.3.6
+* Postgres (PostgreSQL) 13.0
