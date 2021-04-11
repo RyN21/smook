@@ -6,7 +6,7 @@ RSpec.describe 'User Sign Up' do
     click_link 'Sign in'
     expect(current_path).to eq('/sign_in')
     click_link 'Sign up'
-    expect(current_path).to eq('/sign_up')
+    expect(current_path).to eq('/users/sign_up')
   end
 
   # it 'user can be created and sign up' do
