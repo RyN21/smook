@@ -4,6 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def new
-    return redirect_to '/profile' if current_user
+    # return redirect_to '/profile' if current_user
   end
 end

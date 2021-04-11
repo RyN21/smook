@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'User Sign Up' do
   it 'user can navigate to sign up from home' do
     visit '/'
-    click_link 'Log in'
-    expect(current_path).to eq('/log_in')
+    click_link 'Sign in'
+    expect(current_path).to eq('/sign_in')
     click_link 'Sign up'
     expect(current_path).to eq('/sign_up')
   end

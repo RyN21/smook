@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/log_in', to: 'sessions#new'
+  get '/sign_in', to: 'sessions#new'
   #users
   namespace :users do
     get '/sign_up', to: 'registrations#new'
