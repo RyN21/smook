@@ -29,6 +29,8 @@ group :development, :test do
   gem 'table_print', '~> 1.5', '>= 1.5.7'
   gem 'devise'
   gem 'devise-security'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
