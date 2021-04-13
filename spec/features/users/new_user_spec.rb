@@ -1,6 +1,8 @@
 require 'rails_helper'
+require "./spec/support/devise"
 
 RSpec.describe 'User Sign Up' do
+  user = login_user
   it 'user can navigate to sign up from home' do
     visit '/'
     click_link 'Sign in'
@@ -10,6 +12,7 @@ RSpec.describe 'User Sign Up' do
   end
 
   it 'user can be created and sign up' do
+    binding.pry
     visit '/users/sign_up'
     fill_in :Email, with: "laleh21@yahoo.com"
     fill_in :Username, with: "ryn21"
